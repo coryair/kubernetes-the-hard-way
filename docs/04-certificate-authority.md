@@ -80,7 +80,7 @@ In this section you will copy the various certificates to every machine at a pat
 Copy the appropriate certificates and private keys to the `node-0` and `node-1` machines:
 
 ```bash
-for host in node-0.a.ayxcloud.com node-1.a.ayxcloud.com; do
+for host in 'node-0.a.ayxcloud.com' 'node-1.a.ayxcloud.com'; do
   ssh root@$host mkdir /var/lib/kubelet/
   
   scp ca.crt root@$host:/var/lib/kubelet/
