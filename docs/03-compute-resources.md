@@ -22,6 +22,10 @@ cat machines.txt
 XXX.XXX.XXX.XXX server.kubernetes.local server  
 XXX.XXX.XXX.XXX node-0.kubernetes.local node-0 10.200.0.0/24
 XXX.XXX.XXX.XXX node-1.kubernetes.local node-1 10.200.1.0/24
+
+172.27.25.96 server.a.ayxcloud.com server
+172.27.26.221 node-0.a.ayxcloud.com node-0 10.200.0.0/24
+172.27.25.42 node-1.a.ayxcloud.com node-1 10.200.1.0/24
 ```
 
 Now it's your turn to create a `machines.txt` file with the details for the three machines you will be using to create your Kubernetes cluster. Use the example machine database from above and add the details for your machines. 
