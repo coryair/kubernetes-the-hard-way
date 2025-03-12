@@ -85,7 +85,7 @@ Copy the SSH public key to each machine:
 
 ```bash
 while read IP FQDN HOST SUBNET; do 
-  ssh-copy-id root@${IP}
+  ssh-copy-id root@${FQDN}
 done < machines.txt
 ```
 
@@ -93,7 +93,7 @@ Once each key is added, verify SSH public key access is working:
 
 ```bash
 while read IP FQDN HOST SUBNET; do 
-  ssh -n root@${IP} uname -o -m
+  ssh -n root@${FQDN} uname -o -m
 done < machines.txt
 ```
 
@@ -114,8 +114,8 @@ Set the hostname on each machine listed in the `machines.txt` file:
 ```bash
 while read IP FQDN HOST SUBNET; do 
     CMD="sed -i 's/^127.0.1.1.*/127.0.1.1\t${FQDN} ${HOST}/' /etc/hosts"
-    ssh -n root@${IP} "$CMD"
-    ssh -n root@${IP} hostnamectl hostname ${HOST}
+    ssh -n root@${FQDN} "$CMD"
+    ssh -n root@${FQDN} hostnamectl hostname ${HOST}
 done < machines.txt
 ```
 
@@ -123,7 +123,7 @@ Verify the hostname is set on each machine:
 
 ```bash
 while read IP FQDN HOST SUBNET; do
-  ssh -n root@${IP} hostname --fqdn
+  ssh -n root@${FQDN} hostname --fqdn
 done < machines.txt
 ```
 
