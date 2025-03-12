@@ -42,7 +42,7 @@ Generate the certificates and private keys:
 
 ```bash
 certs=(
-  "admin" "node-0" "node-1"
+  "admin" "node-0.a.ayxcloud.com" "node-1.a.ayxcloud.com"
   "kube-proxy" "kube-scheduler"
   "kube-controller-manager"
   "kube-api-server"
